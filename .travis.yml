@@ -6,5 +6,5 @@ deploy:
   api_key:
     secure: "007bc40f-85fb-4c7f-91fe-f570bcb2ad0d"
   app:
-    master: tp-devops-staging
-    production: tp-devops-production
+    master: tp-devops-production
+    develop: tp-devops-staging
