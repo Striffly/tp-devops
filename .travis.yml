@@ -1,19 +1,19 @@
 language: node_js
 node_js:
-- "8.6.0"
-
+- 8.6.0
 deploy:
   provider: heroku
   api_key:
-    secure: "007bc40f-85fb-4c7f-91fe-f570bcb2ad0d"
+    secure: B90tU2iDSJ1Fb8L2NdToDCA3Wj4clk7LFcnlVR6gvu1Kk+lzFpvQaGZXHYQqecemojfT89Uowkq8Tu5TZn5dDYX3ht5yBwxQcpz+gzOLqMIa8fgQiS9b5XgGzKHOukBr5bOlbd9RBTKoLOMp6bcn2GDJ4S7JQreSL+2zmVfb5qWJae6Ehmj9a+QWSLz0zEyH0EXJ3S+Vq//eCCUki4KFxY0uz9xZWO51hCSx0ZC9/B5+oRfD+eceEF2nGBYw0/Pr+AEGrMFKR3JQUJh4atZHj67359cEVWZRHlSDIFlslzX378ik81M7OcqTBf63zh7XosQ2ONa7QmQzZjWzmvHT5oGu2MO8nvDy8IuksYOTCRFCFY8qctvCkkPCnCz6QmS1ZZhpXBQmRhCopaYJNGAUU83ahGzGTLWo0xB1P60gNOHg2RT3lPuvOXzQDPXikcReioBdRyOAbccDJl27SZit6mK4dLMeeR3Dh5Gnk06OBxKLA+oFMxPAN8+M1yy1+pyCljmtCPcMCXaKP8eK7C5Hxlr+UoItbP2Ay9Ik7MYl8XKzJbUr1LK8Sb7lsIYJwk2zVi+BHUJ7TRUEuRNjhu9Qz6xuY2toBLDnb8PGJiFcV4kCfKuANRq3AMTpqc3J1E4GlKYMj1qTCK0gQAmPWNdAY7p6mqAUxYeJkpxIayd5I2g=
   app:
     master: tp-devops-production
     develop: tp-devops-staging
-
+  on:
+    repo: Striffly/tp-devops
 script: echo "Running tests against $(node -v)..."
-
 jobs:
   include:
   - stage: Produce Coverage
     node_js: node
-    script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+    script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+      && rm -rf ./coverage
