@@ -1,10 +1,3 @@
 language: node_js
 node_js:
 - "8.6.0"
-deploy:
-  provider: heroku
-  api_key:
-    secure: "007bc40f-85fb-4c7f-91fe-f570bcb2ad0d"
-  app:
-    master: tp-devops-staging
-    production: tp-devops-production
